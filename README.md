@@ -3,8 +3,14 @@
 Cinema_AI is a small college-level web project where you can search a movie using IMDb ID and get:
 - movie details from OMDb
 - AI sentiment summary using Gemini
+  <img width="3061" height="1432" alt="Screenshot from 2026-03-08 10-35-43" src="https://github.com/user-attachments/assets/25b02e25-00d0-4fcf-bc12-8107f555db58" />
+
 
 I built this to practice full-stack concepts in Next.js like API routes, client-server data flow, and UI design with Tailwind.
+  <img width="1838" height="1386" alt="Screenshot from 2026-03-08 10-36-03" src="https://github.com/user-attachments/assets/7ab7d180-12b1-481c-803f-57e7a9000547" />
+
+
+
 
 ## Tech Stack
 - Next.js 16 (App Router)
@@ -77,8 +83,3 @@ npm run dev
 - Keep API keys private (never commit `.env.local`).
 - If sentiment is unavailable, check Gemini key/quota and server logs.
 
-## Future Improvements
-- Better error messages for API failures
-- Loading skeletons and improved accessibility
-- Save recent searches
-- Add unit/integration tests
