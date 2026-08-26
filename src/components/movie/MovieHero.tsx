@@ -35,9 +35,9 @@ const StarIcon = ({ className = "" }: { className?: string }) => (
   </svg>
 );
 
-const AwardIcon = ({ className = "" }: { className?: string }) => (
+const UsersIcon = ({ className = "" }: { className?: string }) => (
   <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
   </svg>
 );
 
@@ -52,11 +52,9 @@ export default function MovieHero({ movie }: Props) {
             alt={movie.Title}
             className="w-48 h-auto mx-auto md:mx-0 transform transition-transform duration-300 group-hover:scale-105"
           />
-          {/* Hover overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
         
-        {/* Rating badge on poster */}
         {movie.imdbRating && parseFloat(movie.imdbRating) > 0 && (
           <div className="absolute top-2 right-2 bg-black/80 backdrop-blur-sm px-2 py-1 rounded-md border border-yellow-500/30">
             <span className="text-yellow-400 text-sm font-bold">{movie.imdbRating}</span>
@@ -66,15 +64,13 @@ export default function MovieHero({ movie }: Props) {
 
       {/* Details */}
       <div className="flex flex-col gap-4">
-        {/* Title Section */}
+        {/* Title */}
         <div>
           <h1 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
             {movie.Title}
           </h1>
           {movie.Year && (
-            <p className="text-sm text-gray-500 mt-1">
-              {movie.Year}
-            </p>
+            <p className="text-sm text-gray-500 mt-1">{movie.Year}</p>
           )}
         </div>
 
@@ -126,6 +122,17 @@ export default function MovieHero({ movie }: Props) {
           )}
         </div>
 
+        {/* Cast preview */}
+        {movie.Actors && movie.Actors !== 'N/A' && (
+          <div className="flex items-start gap-2 text-sm text-gray-400">
+            <UsersIcon className="w-4 h-4 text-red-400/70 mt-0.5 flex-shrink-0" />
+            <span className="line-clamp-1">
+              {movie.Actors.split(',').slice(0, 3).join(', ')}
+              {movie.Actors.split(',').length > 3 && '...'}
+            </span>
+          </div>
+        )}
+
         {/* IMDb Rating Section */}
         <div className="flex items-center gap-4 mt-2 p-4 bg-black/30 rounded-lg border border-red-900/40">
           <div className="flex items-center gap-2">
@@ -158,14 +165,6 @@ export default function MovieHero({ movie }: Props) {
             </div>
           </div>
         </div>
-
-        {/* Awards/Additional Info */}
-        {movie.Awards && movie.Awards !== 'N/A' && (
-          <div className="flex items-center gap-2 text-xs text-gray-500">
-            <AwardIcon className="w-4 h-4 text-red-400/60" />
-            <span className="line-clamp-1">{movie.Awards}</span>
-          </div>
-        )}
       </div>
     </div>
   );
