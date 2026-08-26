@@ -67,7 +67,7 @@ export default function HomePage() {
   const router = useRouter();
 
   useEffect(() => {
-    setQuickPicks(getRandomMovies(18));
+    setQuickPicks(getRandomMovies(6));
   }, []);
 
   const handleSearch = (id: string) => {
@@ -76,7 +76,7 @@ export default function HomePage() {
   };
 
   const handleRefresh = () => {
-    setQuickPicks(getRandomMovies(4));
+    setQuickPicks(getRandomMovies(6));
   };
 
   return (
