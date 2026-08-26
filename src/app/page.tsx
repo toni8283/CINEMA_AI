@@ -76,7 +76,7 @@ export default function HomePage() {
   };
 
   const handleRefresh = () => {
-    setQuickPicks(getRandomMovies(18));
+    setQuickPicks(getRandomMovies(4));
   };
 
   return (
