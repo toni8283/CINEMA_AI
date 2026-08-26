@@ -73,7 +73,7 @@ export default function MovieHero({ movie }: Props) {
           </h1>
           {movie.Year && (
             <p className="text-sm text-gray-500 mt-1">
-              {movie.Year} • {movie.Type || 'Movie'}
+              {movie.Year}
             </p>
           )}
         </div>
