@@ -7,7 +7,7 @@ Cinema_AI is a small college-level web project where you can search a movie usin
 
 
 I built this to practice full-stack concepts in Next.js like API routes, client-server data flow, and UI design with Tailwind.
-  <img width="1838" height="1386" alt="Screenshot from 2026-03-08 10-36-03" src="https://tgzcaz76hnzdcrrt.public.blob.vercel-storage.com/Screenshot_2026-08-27_06-26-00.png" />
+  <img width="2560" height="1322" alt="Screenshot from 2026-03-08 10-36-03" src="https://tgzcaz76hnzdcrrt.public.blob.vercel-storage.com/Screenshot_2026-08-27_06-26-00.png" />
 
 
 
