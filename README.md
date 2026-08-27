@@ -48,7 +48,7 @@ Visit the live demo and try these IMDb IDs:
 
 ## Features
 - Search by IMDb ID (example: `tt0133093`)
-- 18 random movie suggestions on home page
+- 6 random movie suggestions on home page which you can shuffle for more diff movies suggestions
 - Movie details with poster, plot, cast, rating
 - AI sentiment classification: `positive`, `mixed`, `negative`
 - Premium red/black cinematic UI theme
